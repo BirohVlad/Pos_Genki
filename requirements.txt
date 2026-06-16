@@ -1,0 +1,30 @@
+# ── Web Framework ──────────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+
+# ── Base de Datos ──────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9        # Driver PostgreSQL para Render/producción
+alembic>=1.13.0               # Migraciones de base de datos
+
+# ── Validación ─────────────────────────────────────────────────────────────────
+pydantic[email]>=2.6.0
+
+# ── Integración SRI (SOAP / XML) ───────────────────────────────────────────────
+zeep>=4.2.1                   # Cliente SOAP para WSDLs del SRI
+lxml>=4.9.0                   # Manipulación y firma de XML
+cryptography>=41.0.0          # Backend criptográfico para firma XAdES
+requests>=2.31.0              # HTTP para SOAP sobre SSL
+urllib3>=2.0.0
+sri-xades-signer>=0.1.2       # Firma XAdES-BES específica para SRI Ecuador
+
+# ── Generación de PDF (RIDE) ───────────────────────────────────────────────────
+reportlab>=4.0.0              # Renderizado de RIDE en PDF
+
+# ── Utilidades ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0          # Cargar .env en desarrollo local
+python-multipart>=0.0.9       # Para recibir form-data si se necesita
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+pytest>=8.0.0
+httpx>=0.27.0                 # Cliente async para tests con FastAPI TestClient
